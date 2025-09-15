@@ -39,6 +39,21 @@
     width: 100%; /* Expand the underline to 100% on hover */
 }
 
+.content img {
+  transition: transform 0.5s ease; /* Remove the filter transition and property */
+}
+
+/* Image zoom and grayscale effect */
+.content img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    /* No filter change is needed here */
+}
+
+.content img:hover {
+  transform: scale(1.05);
+  /* No filter change is needed here */
+}
+
 /* Headings slide-in effect */
 @keyframes slideInFromLeft {
     from {
@@ -92,6 +107,33 @@
 .content p:nth-child(9), .content p:nth-child(10) { animation-delay: 1.0s; }
 .content form { animation-delay: 1.2s; }
 
+/* The fadeInUp keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-continuous {
+  animation-name: spin;
+  animation-duration: 4s; /* Time for one full spin */
+  animation-iteration-count: 1; /* Stop after one spin */
+  animation-timing-function: linear; /* Ensures consistent speed */
+}
 
 /* Dynamic Project Card Hover */
 .project-card {
@@ -123,38 +165,4 @@
 .github-link:hover {
     background-color: none;
     color: #333;
-}
-
-/* General body styles */
-body {
-    background-image: url("profile.img/grey3.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: white;
-}
-
-.image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.image-container {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background-color: white;
-    overflow: hidden;
-    box-shadow: 0 0 150px 5px rgba(8, 163, 202, 0.7);
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }

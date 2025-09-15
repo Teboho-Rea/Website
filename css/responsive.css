@@ -27,16 +27,3 @@ skills-section {
         text-align: center;
     }
 }
-
-/* Responsive styles for screens smaller than 768px */
-@media (max-width: 768px) {
-    .image-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image-container {
-        width: 250px; /* Smaller size for smaller screens */
-        height: 250px;
-    }
-}

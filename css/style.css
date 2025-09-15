@@ -132,12 +132,10 @@ h2 {
 }
 
 .image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    gap: 20px; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
-
 
 .image-container {
     overflow: hidden;
