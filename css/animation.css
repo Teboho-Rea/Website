@@ -1,0 +1,160 @@
+/* Page-load fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Base style for nav links */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Create the animated underline using a pseudo-element */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px; /* Position it below the link text */
+    left: 0;
+    background-color: white; /* Match your text color */
+    transition: width 0.3s ease-in-out; /* Animate the width change */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand the underline to 100% on hover */
+}
+
+/* Headings slide-in effect */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    animation: slideInFromLeft 0.8s ease-in-out forwards;
+    opacity: 0;
+    animation-delay: 1s;
+}
+
+/* Animated resume button */
+.content a[download] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:  #080808;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.content a[download]:hover {
+    background-color: #313131;
+    transform: translateY(-3px);
+}
+/* Staggered fade-in for all content sections */
+.content > p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Apply animation delays to stagger the elements */
+.content p:nth-child(1), .content p:nth-child(2) { animation-delay: 0.2s; }
+.content p:nth-child(3), .content p:nth-child(4) { animation-delay: 0.4s; }
+.content p:nth-child(5), .content p:nth-child(6) { animation-delay: 0.6s; }
+.content p:nth-child(7), .content p:nth-child(8) { animation-delay: 0.8s; }
+.content p:nth-child(9), .content p:nth-child(10) { animation-delay: 1.0s; }
+.content form { animation-delay: 1.2s; }
+
+
+/* Dynamic Project Card Hover */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter background */
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Lifts the card slightly */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Adds a pronounced shadow */
+    background-color: rgba(255, 255, 255, 0.2); /* Changes background color */
+}
+
+/* Interactive GitHub Links */
+.github-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: none;
+    color: rgb(5, 5, 5);
+    border: 2px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.github-link:hover {
+    background-color: none;
+    color: #333;
+}
+
+/* General body styles */
+body {
+    background-image: url("profile.img/grey3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 0 150px 5px rgba(8, 163, 202, 0.7);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
